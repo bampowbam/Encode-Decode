@@ -1,21 +1,22 @@
 ﻿@model int?
 @{
-  ViewBag.Title = "Decode";
+    ViewBag.Title = "Decode";
 }
 
 <h2>Decode</h2>
+<p>@Html.ActionLink("Switch to Encode", "Encode", "Default")</p>
 @using (Html.BeginForm("Decode", "Default", FormMethod.Post))
 {
-  @Html.Label("High Value:");
-  @Html.TextBox("highValue");
-  @Html.Label("Low Value:");
-  @Html.TextBox("lowValue");
-  <input type="submit" value="Decode" />
-  <br />
-  if (Model != null)
-  {
-    @Html.Label($"Decoded value {Model.Value}");
-  }
+    @Html.Label("High Value:");
+    @Html.TextBox("highValue");
+    @Html.Label("Low Value:");
+    @Html.TextBox("lowValue");
+    <input type="submit" value="Decode" />
+    <br />
+    if (Model != null)
+    {
+        @Html.Label($"Decoded value {Model.Value}");
+    }
 
 }
 

@@ -1,19 +1,20 @@
 ﻿@model string
 @{
-  ViewBag.Title = "Encode";
+    ViewBag.Title = "Encode";
 }
 
 <h2>Encode</h2>
+<p>@Html.ActionLink("Switch to Decode", "Decode", "Default")</p>
 @using (Html.BeginForm("Encode", "Default", FormMethod.Post))
 {
-  @Html.Label("Value:");
-  @Html.TextBox("value");
-  <input type="submit" value="Encode" />
-  <br />
-  if (Model != null)
-  {
-    @Html.Label($"Encoded value {Model}");
-  }
+    @Html.Label("Value:");
+    @Html.TextBox("value");
+    <input type="submit" value="Encode" />
+    <br />
+    if (Model != null)
+    {
+        @Html.Label($"Encoded value {Model}");
+    }
 
 }
 
